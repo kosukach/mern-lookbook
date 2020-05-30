@@ -32,7 +32,7 @@ class Hoodies extends Component {
                                     className="clo"
                                     onClick= {() => this.props.handleClickImage(i, "hoodies")}>
                                         <img  
-                                            src={`../../dist/images/hoodies/${this.state.items[i].closeupImageName}`}
+                                            src={`public/dist/images/hoodies/${this.state.items[i].closeupImageName}`}
                                             
                                         ></img>
                                     </div>)
