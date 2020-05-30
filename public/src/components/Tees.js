@@ -9,7 +9,7 @@ class Tees extends Component {
         };
     }
     componentDidMount(){
-        axios.get("http://localhost:8080/tees")
+        axios.get("tees")
             .then(items => {
                 this.setState({items: items.data});
             });

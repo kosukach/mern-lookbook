@@ -9,7 +9,7 @@ class Hoodies extends Component {
         };
     }
     componentDidMount(){
-        axios.get("http://localhost:8080/hoodies")
+        axios.get("hoodies")
             .then(items => {console.log(items); return items})
             .then(items => {
                 this.setState({items: items.data});

@@ -27,10 +27,11 @@ let port = process.env.PORT || 8080;
 app.listen(port, ()=> {console.log(`listening on port ${port}...`)})
 
 if(process.env.NODE_ENV == "production"){
-  app.use(express.static("public/dist"));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'dist', 'index.html'));
-  });
+  
 }
 
+app.use(express.static("public/dist"));
+
+///app.get('*', (req, res) => {
+ // res.sendFile(path.resolve(__dirname, 'public', 'dist', 'index.html'));
+//});
