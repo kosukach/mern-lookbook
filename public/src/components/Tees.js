@@ -32,7 +32,7 @@ class Tees extends Component {
                                     onClick= {() => this.props.handleClickImage(i, "tees")}>
                                         <img 
                                             className="grid-image" 
-                                            src={`C:/Users/User/Documents/kuz-app/webpack-react-kuz/dist/images/tees/${this.state.items[i].closeupImageName}`}
+                                            src={`/images/tees/${this.state.items[i].closeupImageName}`}
                                         ></img>
                                     </div>)
                                 }
@@ -57,7 +57,7 @@ class Tees extends Component {
                                             <div className="image-container">
                                                 <img 
                                                     
-                                                    src={`C:/Users/User/Documents/kuz-app/webpack-react-kuz/dist/images/tees/${this.state.items[i].imageName}`}
+                                                    src={`/images/tees/${this.state.items[i].imageName}`}
                                                 ></img>
                                             </div>
                                             <div className="title-container">

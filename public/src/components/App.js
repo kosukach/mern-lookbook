@@ -199,7 +199,6 @@ class App extends Component {
       }, 500);
     });
     animatePromise.then(()=> {
-      console.log("kurec")
       $("canvas").remove();
       $(`#${str}-grid`).fadeIn(500).css({"display": "grid"});
     });

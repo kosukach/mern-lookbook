@@ -32,7 +32,7 @@ class Hoodies extends Component {
                                     className="clo"
                                     onClick= {() => this.props.handleClickImage(i, "hoodies")}>
                                         <img  
-                                            src={`public/dist/images/hoodies/${this.state.items[i].closeupImageName}`}
+                                            src={`/images/hoodies/${this.state.items[i].closeupImageName}`}
                                             
                                         ></img>
                                     </div>)
@@ -57,7 +57,7 @@ class Hoodies extends Component {
                                         <div className="image-container">
                                             <img 
                                                     
-                                                src={`C:/Users/User/Documents/kuz-app/webpack-react-kuz/dist/images/hoodies/${this.state.items[i].imageName}`}
+                                                src={`/images/hoodies/${this.state.items[i].imageName}`}
                                             ></img>
                                         </div>
                                         <div className="title-container">
