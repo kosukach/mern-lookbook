@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Joi = require("@hapi/joi");
+import mongoose from "mongoose";
+import Joi from "@hapi/joi";
 const itemSchema = new mongoose.Schema({
     id: {
         type: Number,
@@ -38,5 +38,6 @@ function validateItem(tee){
     return Joi.validate(tee, schema);
 };
 
-module.exports.validateItem = validateItem;
-module.exports.itemSchema = itemSchema;
+//export let validateItem = validateItem;
+//export let itemSchema = itemSchema;
+export {validateItem as validateItem, itemSchema as itemSchema}

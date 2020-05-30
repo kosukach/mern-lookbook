@@ -3,8 +3,9 @@ import "express-async-errors"
 import mongoose from "mongoose"
 import config from "config"
 import cors from "cors"
-import tees from "./routers/teeRouter"
-import hoodies from "./routers/hoodieRouter"
+import tees from "./routers/teeRouter.js"
+import hoodies from "./routers/hoodieRouter.js"
+import path from "path"
 
 const app = express();
 
@@ -22,13 +23,14 @@ mongoose.connect(config.get("db"), { useNewUrlParser: true })
   .then(() => console.log(`Connected to ${config.get("db")}...`))
   .catch((ex)=> console.log(ex));
 
+let port = process.env.PORT || 8080;
+app.listen(port, ()=> {console.log(`listening on port ${port}...`)})
+
 if(process.env.NODE_ENV == "production"){
-  app.use(express.static("public/dist/"));
+  app.use(express.static("public/dist"));
 
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'dist', 'index.html'));
   });
 }
 
-let port = 5000;
-app.listen(port, ()=> {console.log(`listening on port ${port}...`)})

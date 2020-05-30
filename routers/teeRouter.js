@@ -1,6 +1,6 @@
-const express = require("express");
-const { Tee } = require("../models/tee");
-const { validateItem } = require("../models/item");
+import express from "express";
+import Tee from "../models/tee.js";
+import { validateItem } from "../models/item.js";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -30,4 +30,4 @@ router.post("/", async (req, res) => {
     res.send(tee);
 })
 
-module.exports = router;
+export default router;

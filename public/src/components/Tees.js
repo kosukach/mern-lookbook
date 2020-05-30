@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from "jquery";
-
+import axios from "axios"
 class Tees extends Component {
     constructor(props){
         super(props);
@@ -9,10 +9,9 @@ class Tees extends Component {
         };
     }
     componentDidMount(){
-        fetch("http://localhost:5000/tees")
-            .then(res => res.json())
+        axios.get("http://localhost:8080/tees")
             .then(items => {
-                this.setState({items: items});
+                this.setState({items: items.data});
             });
     }
     render() {

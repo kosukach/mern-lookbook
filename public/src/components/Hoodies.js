@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from "jquery";
+import axios from "axios";
 class Hoodies extends Component {
     constructor(props){
         super(props);
@@ -8,10 +9,10 @@ class Hoodies extends Component {
         };
     }
     componentDidMount(){
-        fetch("http://localhost:5000/hoodies")
-            .then(res => res.json())
+        axios.get("http://localhost:8080/hoodies")
+            .then(items => {console.log(items); return items})
             .then(items => {
-                this.setState({items: items});
+                this.setState({items: items.data});
             });
     }
     render() {
@@ -31,7 +32,7 @@ class Hoodies extends Component {
                                     className="clo"
                                     onClick= {() => this.props.handleClickImage(i, "hoodies")}>
                                         <img  
-                                            src={`C:/Users/User/Documents/kuz-app/webpack-react-kuz/dist/images/hoodies/${this.state.items[i].closeupImageName}`}
+                                            src={`../../dist/images/hoodies/${this.state.items[i].closeupImageName}`}
                                             
                                         ></img>
                                     </div>)

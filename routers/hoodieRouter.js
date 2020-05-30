@@ -1,6 +1,6 @@
-const express = require("express");
-const { Hoodie } = require("../models/hoodie");
-const { validateItem } = require("../models/item");
+import express from "express";
+import Hoodie from "../models/hoodie.js";
+import { validateItem } from "../models/item.js";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -43,4 +43,4 @@ router.put("/", async (req, res) => {
     }))
 
 })
-module.exports = router;
+export default router;
