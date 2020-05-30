@@ -36,5 +36,8 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
