@@ -19,7 +19,7 @@ app.use("/hoodies", hoodies);
 
 
 
-mongoose.connect(config.get("db"), { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI ||config.get("db"), { useNewUrlParser: true })
   .then(() => console.log(`Connected to ${config.get("db")}...`))
   .catch((ex)=> console.log(ex));
 
